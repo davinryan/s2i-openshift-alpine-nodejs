@@ -51,7 +51,5 @@ EXPOSE 3000
 # can execute relative to this path.
 WORKDIR ${HOME}
 
-ENTRYPOINT ["container-entrypoint"]
-
 # Set the default CMD for the image
 CMD ["usage"]
