@@ -36,9 +36,9 @@ ENV BASH_ENV=/opt/app-root/etc/scl_enable \
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 #RUN useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default
-RUN adduser -u 1001 -g 0 -D -h ${HOME} -s /sbin/nologin nodejs
 RUN mkdir -p /opt/app-root/
-RUN chown -R 1001:0 /opt/app-root
+RUN adduser -u 1001 -g 1001 -D -h ${HOME} -s /sbin/nologin nodejs
+RUN chown -R 1001:1001 /opt/app-root
 #RUN chown -R 1001:1001 /opt/app-root
 
 # This default user is created in the alpine image
